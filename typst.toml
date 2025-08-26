@@ -1,0 +1,7 @@
+[package]
+name = "ethan-standard-style"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["Ethan Charoenpitaks"]
+license = "GPL-3.0-or-later"
+description = "Ethan's standard Typst style."
