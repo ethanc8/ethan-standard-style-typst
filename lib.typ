@@ -89,7 +89,7 @@
 
 #let example = thmplain("example", "Example").with(numbering: none)
 
-#let defname(name) = [#highlight[_ #name _]]
+#let defname(name) = [_*#name*_]
 
 // Units
 #import "@preview/zero:0.5.0": zi
@@ -102,7 +102,16 @@
 
 // Math
 
-#let to = $arrow$
+#let to = sym.arrow
+#let implies = sym.arrow.r.double
+#let iff = sym.arrow.l.r.double
+#let setminus = sym.backslash
+
+#let Reals = sym.RR
+#let Naturals = sym.NN
+#let Integers = sym.ZZ
+#let Complex = sym.CC
+#let Rationals = sym.QQ
 
 // Style for the document
 
