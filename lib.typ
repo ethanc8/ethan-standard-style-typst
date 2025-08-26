@@ -19,8 +19,9 @@
     features: (
       // Round emptyset
       cv01: 1,
-      // Computer Modern blackboard bold
+      // Blackboard bold from Computer Modern with smallcaps
       ss03: 1,
+      ss05: 1,
     )
   ),
 )
@@ -39,6 +40,13 @@
   show math.equation: set text(..font)
   doc
 }
+
+// Equivalent of LaTeX \mathscr
+// FIXME: Only works on newcm-math
+#let scr(it) = text(
+  features: ("ss01",),
+  box($cal(it)$),
+)
 
 // Theorem environments
 #import "@preview/ctheorems:1.1.3": *
