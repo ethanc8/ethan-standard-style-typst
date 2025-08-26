@@ -1,4 +1,45 @@
 #import "local-conf.typ": *
+
+// Fonts
+#let fonts = (
+  libertinus-serif: (
+    font: "Libertinus Serif"
+  ),
+  newcm: (
+    font: "New Computer Modern"
+  ),
+  dejavu-sans-mono: (
+    font: "DejaVu Sans Mono"
+  )
+)
+
+#let math-fonts = (
+  newcm-math: (
+    font: "New Computer Modern Math",
+    features: (
+      // Round emptyset
+      cv01: 1,
+      // Computer Modern blackboard bold
+      ss03: 1,
+    )
+  ),
+)
+
+#let set-text-font(font: fonts.libertinus-serif, doc) = {
+  set text(..font)
+  doc
+}
+
+#let set-mono-font(font: fonts.dejavu-sans-mono, doc) = {
+  show raw: set text(..font)
+  doc
+}
+
+#let set-math-font(font: math-fonts.newcm-math, doc) = {
+  show math.equation: set text(..font)
+  doc
+}
+
 // Theorem environments
 #import "@preview/ctheorems:1.1.3": *
 
@@ -78,9 +119,10 @@
 
   #show: thmrules.with(qed-symbol: $square$)
 
-  // // Numbering
-  // #counter(heading).update(section-number - 1)
-  // #set heading(numbering: "1.1.")
+  // Font
+  #show: set-text-font.with(font: fonts.libertinus-serif)
+  #show: set-mono-font.with(font: fonts.dejavu-sans-mono)
+  #show: set-math-font.with(font: math-fonts.newcm-math)
 
   // Title
   #set document(title: [#title])
@@ -118,21 +160,10 @@
 
   #show: thmrules.with(qed-symbol: $square$)
 
-  // // Numbering
-  // #counter(heading).update(section-number - 1)
-  // #set heading(numbering: "1.1.")
-
-  // Title
-  #set document(title: [#title])
-
-  #text(
-    weight: "semibold",
-    size: 10pt
-  )[EKACTL, section #section-number] \
-  #text(
-    weight: "black",
-    size: 24pt
-  )[#title]
+  // Font
+  #show: set-text-font.with(font: fonts.libertinus-serif)
+  #show: set-mono-font.with(font: fonts.dejavu-sans-mono)
+  #show: set-math-font.with(font: math-fonts.newcm-math)
 
   #doc
 
