@@ -141,6 +141,9 @@
   #show: set-mono-font.with(font: fonts.dejavu-sans-mono)
   #show: set-math-font.with(font: math-fonts.newcm-math)
 
+  // Heading numbering
+  #set heading(numbering: "1.1.")
+
   // Title
   #set document(title: [#title])
 
