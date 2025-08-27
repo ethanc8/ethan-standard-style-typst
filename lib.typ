@@ -52,34 +52,41 @@
 #import "@preview/ctheorems:1.1.3": *
 
 #let theorem = thmbox(
-  "theorem",
+  "maincounter",
   "Theorem",
   fill: rgb("#e8e8f8")
 )
 
 #let axiom = thmbox(
-  "axiom",
+  "maincounter",
   "Axiom",
   // base: "theorem",
   fill: rgb("#e8e8f8")
 )
 
 #let lemma = thmbox(
-  "lemma",
+  "maincounter",
   "Lemma",
   // base: "theorem",
   fill: rgb("#e8e8f8")
 )
 
 #let corollary = thmbox(
-  "corollary",
+  "maincounter",
   "Corollary",
+  // base: "theorem",
+  fill: rgb("#f8f3e8")
+)
+
+#let warning = thmbox(
+  "maincounter",
+  "Warning",
   // base: "theorem", // use the theorem counter
   fill: rgb("#f8e8e8")
 )
 
 #let definition = thmbox(
-  "definition",
+  "maincounter",
   "Definition",
   // base: "theorem",
   fill: rgb("#eeffee")
