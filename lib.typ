@@ -49,52 +49,8 @@
 )
 
 // Theorem environments
-#import "@preview/ctheorems:1.1.3": *
-
-#let theorem = thmbox(
-  "maincounter",
-  "Theorem",
-  fill: rgb("#e8e8f8")
-)
-
-#let axiom = thmbox(
-  "maincounter",
-  "Axiom",
-  // base: "theorem",
-  fill: rgb("#e8e8f8")
-)
-
-#let lemma = thmbox(
-  "maincounter",
-  "Lemma",
-  // base: "theorem",
-  fill: rgb("#e8e8f8")
-)
-
-#let corollary = thmbox(
-  "maincounter",
-  "Corollary",
-  // base: "theorem",
-  fill: rgb("#f8f3e8")
-)
-
-#let warning = thmbox(
-  "maincounter",
-  "Warning",
-  // base: "theorem", // use the theorem counter
-  fill: rgb("#f8e8e8")
-)
-
-#let definition = thmbox(
-  "maincounter",
-  "Definition",
-  // base: "theorem",
-  fill: rgb("#eeffee")
-)
-
-#let proof = thmproof("proof", "Proof")
-
-#let example = thmplain("example", "Example").with(numbering: none)
+#import "@preview/theorion:0.4.0": *
+#import cosmos.fancy: *
 
 #let defname(name) = [_*#name*_]
 
@@ -142,7 +98,8 @@
     margin: 20pt,
   ) if not is-previewing
 
-  #show: thmrules.with(qed-symbol: $square$)
+  // Theorem environments
+  #show: show-theorion
 
   // Font
   #show: set-text-font.with(font: fonts.libertinus-serif)
@@ -186,7 +143,8 @@
     margin: 20pt,
   ) if not is-previewing
 
-  #show: thmrules.with(qed-symbol: $square$)
+  // Theorem environments
+  #show: show-theorion
 
   // Font
   #show: set-text-font.with(font: fonts.libertinus-serif)
