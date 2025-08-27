@@ -108,6 +108,7 @@
 #import "@preview/whalogen:0.2.0": ce
 
 // Math
+#import "@preview/physica:0.9.5": *
 
 #let to = sym.arrow
 #let implies = sym.arrow.r.double
