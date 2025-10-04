@@ -19,9 +19,9 @@
     features: (
       // Round emptyset
       cv01: 1,
-      // Blackboard bold from Computer Modern with smallcaps
+      // Blackboard bold from Computer Modern
       ss03: 1,
-      ss05: 1,
+      // ss05: 1,
     )
   ),
 )
@@ -51,6 +51,7 @@
 // Theorem environments
 #import "@preview/theorion:0.4.0": *
 #import cosmos.fancy: *
+// #import cosmos.simple: *
 
 #let defname(name) = [_*#name*_]
 
@@ -123,7 +124,7 @@
 
   #doc
 
-  #if is-previewing [#v(10cm)]
+  #if is-previewing [#v(30cm)]
 ]
 
 #let ethan-standard-style(
@@ -138,9 +139,6 @@
   ) if is-previewing
   #set page(
     paper: "us-letter",
-    columns: 3,
-    flipped: true,
-    margin: 20pt,
   ) if not is-previewing
 
   // Theorem environments
@@ -153,7 +151,7 @@
 
   #doc
 
-  #if is-previewing [#v(10cm)]
+  #if is-previewing [#v(30cm)]
 ]
 
 
