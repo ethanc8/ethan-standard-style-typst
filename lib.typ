@@ -50,8 +50,9 @@
 
 // Theorem environments
 #import "@preview/theorion:0.4.0": *
-#import cosmos.fancy: *
-// #import cosmos.simple: *
+// #import cosmos.fancy: *
+#import "theorion-ekactl-color-side.typ": *
+// #import "theorion-ekactl-traditional.typ": *
 
 #let defname(name) = [_*#name*_]
 
@@ -116,7 +117,7 @@
   #text(
     weight: "semibold",
     size: 10pt
-  )[EKACTL, section #section-number] \
+  )[EKACTL-Typst, section #section-number] \
   #text(
     weight: "black",
     size: 24pt
