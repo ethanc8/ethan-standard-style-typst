@@ -63,7 +63,7 @@
 
 // It looks like Typsium has better architecture, but whalogen is better for now
 // eventually there will be feature parity
-#import "@preview/whalogen:0.2.0": ce
+#import "@preview/whalogen:0.3.0": ce
 
 // Math
 #import "@preview/physica:0.9.5": *
@@ -97,8 +97,14 @@
     paper: "us-letter",
     columns: 3,
     flipped: true,
-    margin: 20pt,
+    margin: (
+      bottom: 25pt,
+      rest: 20pt
+    ),
+    numbering: "1",
+    footer: context[#title #counter(heading).display() #h(1fr) #counter(page).display()],
   ) if not is-previewing
+  #set columns(gutter: 12pt) if not is-previewing
 
   // Theorem environments
   #show: show-theorion
